@@ -6,6 +6,10 @@ export const environment = {
   production: false
 };
 
+export const knowtifiedAppServiceUrl = {
+  submitContactForm: 'http://ec2-204-236-202-128.compute-1.amazonaws.com:8000/api-contact-us/'
+};
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

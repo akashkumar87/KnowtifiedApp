@@ -1,0 +1,229 @@
+<div class="container">
+  <h2 style="text-align: center">Contact Us</h2>
+  <div class="container-form">
+    <form [formGroup]="contactForm" (ngSubmit)="submit()">
+      <label class="container-form---label" for="first_name">First Name</label>
+      <input
+        class="container-form---input"
+        type="text"
+        formControlName="first_name"
+      />
+      <small
+        class="container-form---error"
+        *ngIf="
+          getFormControl['first_name'].touched &&
+          getFormControl['first_name'].invalid
+        "
+        >First name required</small
+      >
+      <pre></pre>
+      <label class="container-form---label" for="last_name">Last Name</label>
+      <input
+        class="container-form---input"
+        type="text"
+        formControlName="last_name"
+      />
+      <small
+        class="container-form---error"
+        *ngIf="
+          getFormControl['last_name'].touched &&
+          getFormControl['last_name'].invalid
+        "
+        >Last name required</small
+      >
+      <pre></pre>
+      <label class="container-form---label" for="email_address">Email</label>
+      <input
+        class="container-form---input"
+        type="text"
+        formControlName="email_address"
+      />
+      <small
+        class="container-form---error"
+        *ngIf="
+          getFormControl['email_address'].touched &&
+          getFormControl['email_address']?.errors?.['required']
+        "
+        >Email name required</small
+      >
+      <small
+        class="container-form---error"
+        *ngIf="
+          getFormControl['email_address'].touched &&
+          getFormControl['email_address'].invalid &&
+          !getFormControl['email_address']?.errors?.['required']
+        "
+        >Email ID is invalid</small
+      >
+      <pre></pre>
+      <label for="contact_number">Contact Number</label>
+      <input
+        class="container-form---input"
+        type="number"
+        formControlName="contact_number"
+      />
+      <small
+        class="container-form---error"
+        *ngIf="
+          getFormControl['contact_number'].touched &&
+          getFormControl['contact_number']?.errors?.['required']
+        "
+        >Phone number required</small
+      >
+      <small
+        class="container-form---error"
+        *ngIf="
+          getFormControl['contact_number'].touched &&
+          getFormControl['contact_number'].invalid &&
+          !getFormControl['contact_number']?.errors?.['required']
+        "
+        >Please enter 10 digit phone number</small
+      >
+      <pre></pre>
+      <label class="container-form---label" for="street_name"
+        >Street Name</label
+      >
+      <input
+        class="container-form---input"
+        type="text"
+        formControlName="street_name"
+      />
+      <small
+        class="container-form---error"
+        *ngIf="
+          getFormControl['street_name'].touched &&
+          getFormControl['street_name'].invalid
+        "
+        >Street name required</small
+      >
+      <pre></pre>
+      <label class="container-form---label" for="locality">Locality</label>
+      <input
+        class="container-form---input"
+        type="text"
+        formControlName="locality"
+      />
+      <small
+        class="container-form---error"
+        *ngIf="
+          getFormControl['locality'].touched &&
+          getFormControl['locality'].invalid
+        "
+        >Locality required</small
+      >
+      <pre></pre>
+      <label class="container-form---label" for="pin_code">Pin Code</label>
+      <input
+        class="container-form---input"
+        type="number"
+        formControlName="pin_code"
+      />
+      <small
+        class="container-form---error"
+        *ngIf="
+          getFormControl['pin_code'].touched &&
+          getFormControl['pin_code'].invalid
+        "
+        >Pin code required</small
+      >
+      <pre></pre>
+      <label class="container-form---label" for="district">District</label>
+      <input
+        class="container-form---input"
+        type="text"
+        formControlName="district"
+      />
+      <small
+        class="container-form---error"
+        *ngIf="
+          getFormControl['district'].touched &&
+          getFormControl['district'].invalid
+        "
+        >District required</small
+      >
+      <pre></pre>
+      <label class="container-form---label" for="state">State</label>
+      <input
+        class="container-form---input"
+        type="text"
+        formControlName="state"
+      />
+      <small
+        class="container-form---error"
+        *ngIf="
+          getFormControl['state'].touched && getFormControl['state'].invalid
+        "
+        >State required</small
+      >
+      <pre></pre>
+      <label class="container-form---label" for="country">Country</label>
+      <input
+        class="container-form---input"
+        type="text"
+        formControlName="country"
+      />
+      <small
+        class="container-form---error"
+        *ngIf="
+          getFormControl['country'].touched && getFormControl['country'].invalid
+        "
+        >Country required</small
+      >
+      <pre></pre>
+      <label class="container-form---label" for="subject">Subject</label>
+      <input
+        class="container-form---input"
+        type="text"
+        formControlName="subject"
+      />
+      <small
+        class="container-form---error"
+        *ngIf="
+          getFormControl['subject'].touched && getFormControl['subject'].invalid
+        "
+        >Subject required</small
+      >
+      <pre></pre>
+      <label class="container-form---label" for="message">Message</label>
+      <textarea
+        class="container-form---input"
+        type="text"
+        formControlName="message"
+        rows="10"
+      ></textarea>
+      <small
+        class="container-form---error"
+        *ngIf="
+          getFormControl['message'].touched && getFormControl['message'].invalid
+        "
+        >Message required</small
+      >
+      <pre></pre>
+      <label class="container-form---label" for="file-name">Upload</label>
+      <input
+        class="container-form---input"
+        type="file"
+        formControlName="file_name"
+      />
+      <small
+        class="container-form---error"
+        *ngIf="
+          getFormControl['file_name'].touched &&
+          getFormControl['file_name'].invalid
+        "
+        >File name required</small
+      >
+      <pre></pre>
+      <button
+        [ngClass]="
+          contactForm.invalid
+            ? 'container-form---button-disabled'
+            : 'container-form---button'
+        "
+        [disabled]="contactForm.invalid"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
